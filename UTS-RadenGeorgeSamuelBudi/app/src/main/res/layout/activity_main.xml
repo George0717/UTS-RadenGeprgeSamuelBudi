@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/school"
+
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30px"
         android:textSize="60px"
-        android:textColor="@color/black" />
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/et_nama_lengkap"
@@ -22,7 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_judul"
         android:layout_marginTop="90px"
-        android:hint="Nama Lengkap" />
+        android:hint="Nama Lengkap"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        />
 
     <EditText
         android:id="@+id/et_nomor_pendaftaran"
@@ -30,7 +35,9 @@
         android:layout_height="wrap_content"
         android:hint="Nomor Pendaftaran"
         android:layout_below="@+id/et_nama_lengkap"
-        android:layout_marginTop="20px" />
+        android:textColor="@color/white"
+        android:layout_marginTop="20px"
+        android:textColorHint="@color/white"/>
 
 
     <Spinner
@@ -40,6 +47,8 @@
         android:layout_below="@id/et_nomor_pendaftaran"
         android:entries="@array/jalur_dalam"
         android:layout_marginTop="30px"
+        android:textColor="@color/white"
+
         />
 
 
@@ -49,7 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/sp_jalurPendaftaran"
         android:layout_marginTop="40px"
-        android:text="Konfirmasi Daftar" />
+        android:text="Konfirmasi Daftar"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/btn_daftar"

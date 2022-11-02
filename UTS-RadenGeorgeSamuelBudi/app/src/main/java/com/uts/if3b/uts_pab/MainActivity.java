@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 namaLengkap = etNama.getText().toString();
                 nomorPendaftaran = etNomor.getText().toString();
                 spinner = dropDown.getSelectedItem().toString();
+                konfirmasi = confirm.getText().toString();
+
                 if (namaLengkap.trim().equals(""))
                 {
                     etNama.setError("Nama Lengkap Wajib Dimasukkan");
@@ -47,19 +49,20 @@ public class MainActivity extends AppCompatActivity {
                 else if(nomorPendaftaran.trim().equals("")) {
                     etNomor.setError("Nomor Pendafaran Wajib DIISI");
                 }
-                else if(confirm.isChecked() == false){
-                    confirm.setError("Pastikan data");
+                else if(!confirm.isChecked()){
+                    Toast.makeText(MainActivity.this, "Centang Konfirmasi", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Selamat " + namaLengkap + " anda sudah terdaftar di kampus Universitas Multi Data Palembang", Toast.LENGTH_SHORT).show();
+                    Intent pindah = new Intent(MainActivity.this, Konfirmasi.class);
+                    pindah.putExtra("nama", namaLengkap);
+                    pindah.putExtra("nomor", nomorPendaftaran);
+                    pindah.putExtra("confirm", konfirmasi);
+                    pindah.putExtra("spin", spinner);
+                    startActivity(pindah);
                 }
 
-                Intent pindah = new Intent(MainActivity.this, Konfirmasi.class);
-                pindah.putExtra("nama", namaLengkap);
-                pindah.putExtra("nomor", nomorPendaftaran);
-                pindah.putExtra("spin", spinner);
-                startActivity(pindah);
+
             }
         });
 

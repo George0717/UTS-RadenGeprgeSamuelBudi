@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 namaLengkap = etNama.getText().toString();
                 nomorPendaftaran = etNomor.getText().toString();
-                spinner = dropDown.getSelectedItem().toString();
+                spinner = String.valueOf(dropDown.getSelectedItem());
                 konfirmasi = confirm.getText().toString();
 
                 if (namaLengkap.trim().equals(""))
@@ -52,8 +52,10 @@ public class MainActivity extends AppCompatActivity {
                 else if(!confirm.isChecked()){
                     Toast.makeText(MainActivity.this, "Centang Konfirmasi", Toast.LENGTH_SHORT).show();
                 }
-                else
-                {
+                else if (spinner.equalsIgnoreCase("Jalur Pendaftaran")) {
+                    Toast.makeText(MainActivity.this, "Silahkan Dipilih terlebih dahulu", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     Intent pindah = new Intent(MainActivity.this, Konfirmasi.class);
                     pindah.putExtra("nama", namaLengkap);
                     pindah.putExtra("nomor", nomorPendaftaran);

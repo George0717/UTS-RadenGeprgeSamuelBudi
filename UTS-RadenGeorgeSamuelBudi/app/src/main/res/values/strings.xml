@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">UTS-PAB</string>
     <string-array name="jalur_dalam">
+        <item>Jalur Pendaftaran</item>
         <item>Tes Tertulis</item>
         <item>Jalur Tanpa Tes</item>
         <item>Ujian Saringan Masuk</item>

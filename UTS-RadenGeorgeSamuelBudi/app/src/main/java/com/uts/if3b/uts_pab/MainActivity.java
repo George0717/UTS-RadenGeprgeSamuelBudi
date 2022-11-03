@@ -49,12 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 else if(nomorPendaftaran.trim().equals("")) {
                     etNomor.setError("Nomor Pendafaran Wajib DIISI");
                 }
-                else if(!confirm.isChecked()){
-                    Toast.makeText(MainActivity.this, "Centang Konfirmasi", Toast.LENGTH_SHORT).show();
-                }
                 else if (spinner.equalsIgnoreCase("Jalur Pendaftaran")) {
                     Toast.makeText(MainActivity.this, "Silahkan Dipilih terlebih dahulu", Toast.LENGTH_SHORT).show();
                 }
+                else if(!confirm.isChecked()){
+                    Toast.makeText(MainActivity.this, "Centang Konfirmasi", Toast.LENGTH_SHORT).show();
+                }
+
                 else {
                     Intent pindah = new Intent(MainActivity.this, Konfirmasi.class);
                     pindah.putExtra("nama", namaLengkap);
